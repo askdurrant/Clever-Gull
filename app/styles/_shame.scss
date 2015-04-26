@@ -1,0 +1,14 @@
+.search-bar__results-list{
+	position: absolute;
+	z-index: 10;
+	border: 1px solid gray;
+	background: lightgray;
+	padding:$general-padding-value;
+	li{
+		list-style: none;
+		cursor: pointer;
+		&:hover{
+			color:#bada55;
+		}
+	}
+}
