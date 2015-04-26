@@ -10,9 +10,9 @@
 angular.module('cleverGullApp')
   .service('server', function ($http) {
     return{
-    	getData: function(dataUrl){
+    	getAllData: function(subreddit){
     		return $http({
-    			url: dataUrl,
+    			url: 'http://www.reddit.com/r/' + subreddit + '.json',
     			method: "GET"
     		});
     	},

@@ -9,12 +9,12 @@
  */
 angular.module('cleverGullApp')
   .service('sharedProperties', function () {
-  	var subreddits = [];
+  	var subreddits = ['webdev', 'politics'];
   	return{
   		addSubreddit: function(subreddit){
   			subreddits.push(subreddit);
   			console.log(subreddits);
-  		}
+  		},
   		subscribedSubreddits: function(){
   			return subreddits;
   		}

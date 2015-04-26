@@ -13,10 +13,19 @@ angular.module('cleverGullApp')
     //Get list of subscribed subreddits - NEED TO CHANGE
     $scope.getSubscribed = sharedProperties.subscribedSubreddits();
     
-    server.getData("https://www.reddit.com/r/webdev.json").success(function(data){
-    	$scope.data = data.data;
-    	console.log($scope.data);
+    $scope.data = [];
+
+    angular.forEach($scope.getSubscribed, function(value, key){
+        server.getAllData(value).success(function(data){
+            $scope.data.push(data.data);
+            console.log($scope.data);
+        });
     });
+
+    // server.getAllData("webdev").success(function(data){
+    // 	$scope.data = data.data;
+    // 	console.log($scope.data);
+    // });
 
     $scope.getIndividualPost = function(postUrl){
     	var trimPostUrl = postUrl.substring(0, postUrl.length - 1);
