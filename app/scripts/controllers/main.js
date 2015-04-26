@@ -22,7 +22,6 @@ angular.module('cleverGullApp')
     $scope.getPosts();
 
     $scope.$on('addedSubreddit', function(){
-        console.log('here')
         $scope.getPosts();
     });
 
