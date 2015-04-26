@@ -1,12 +1,15 @@
-<div class="jumbotron">
-  <h1>You're looking at /r/{{ data.children[0].data.subreddit }}</h1>
+<div class="col-sm-4">
+  <div class="row">
+    <ul>
+      <li data-ng-repeat="item in data.children">
+        <h3 ng-click="getIndividualPost(item.data.permalink)">{{ item.data.title }}</h3>
+          <img ng-if="item.data.thumbnail" src="{{ item.data.thumbnail }}" alt="">
+      </li>
+    </ul>
+  </div>
 </div>
-
-<div class="row">
-  <ul>
-    <li ng-repeat="item in data.children">
-      <h3>{{ item.data.title }}</h3>
-      <img src="{{ item.data.thumbnail }}" alt="">
-    </li>
-  </ul>
-</div>
+<div class="col-sm-8">
+  <div data-ng-show="getIndividualPost">
+    {{ individualPost }}
+  </div>
+</div>  

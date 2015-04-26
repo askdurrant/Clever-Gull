@@ -11,9 +11,9 @@ angular.module('cleverGullApp')
   .service('server', function ($http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     return{
-    	getData: function(){
+    	getData: function(dataUrl){
     		return $http({
-    			url: "https://www.reddit.com/r/webdev.json",
+    			url: dataUrl,
     			method: "GET"
     		});
     	}
