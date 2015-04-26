@@ -7,7 +7,7 @@
  * # searchSubreddit
  */
 angular.module('cleverGullApp')
-  .directive('searchSubreddit', function ($compile, server) {
+  .directive('searchSubreddit', function ($compile, server, sharedProperties) {
     return {
       templateUrl: '../../views/search-subreddit.html',
       restrict: 'A',
@@ -32,7 +32,7 @@ angular.module('cleverGullApp')
   			});
 
   			scope.addSubreddit = function(subreddit){
-  				// sharedProperties.addSubreddit(subreddit);
+  				sharedProperties.addSubreddit(subreddit);
   			};	
       	}
     };
