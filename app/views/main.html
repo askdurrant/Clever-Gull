@@ -3,13 +3,25 @@
     <ul>
       <li data-ng-repeat="item in data.children">
         <h3 ng-click="getIndividualPost(item.data.permalink)">{{ item.data.title }}</h3>
-          <img ng-if="item.data.thumbnail" src="{{ item.data.thumbnail }}" alt="">
+        <img ng-if="item.data.thumbnail" src="{{ item.data.thumbnail }}" alt="">
       </li>
     </ul>
   </div>
 </div>
 <div class="col-sm-8">
   <div data-ng-show="getIndividualPost">
-    {{ individualPost }}
+    <h4>Comments</h4>
+    <ul>
+      <li ng-repeat"individualPost.children">
+        <a href="{{ individualPostUrl }}">{{ individualPostTitle }}</a>
+        <div class="comments">
+          <div data-ng-repeat="comment in individualPostComments.data.children" >
+            <hr>
+            <small><strong>{{ comment.data.author }}</strong> | <em>up: {{ comment.data.ups }} / down: {{ comment.data.downs }}</em></small>
+            <p>{{ comment.data.body }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>  
