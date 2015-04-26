@@ -20,6 +20,11 @@ angular.module('cleverGullApp')
     	
 		server.getPost(trimPostUrl).success(function(data){
             console.log(data);
+            $scope.individualPost = data[0];
+            $scope.individualPostTitle = data[0].data.children[0].data.title;
+            $scope.individualUrl = data[0].data.children[0].data.url;
+            $scope.individualPostComments = data[1];
+
 		})
     };
     
