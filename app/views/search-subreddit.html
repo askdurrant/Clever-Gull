@@ -1,0 +1,5 @@
+<input type="text" data-ng-model="searchSubreddit"/>
+
+<ul>
+	<li data-ng-repeat="result in searchSR" data-ng-click="addSubreddit(result.data.display_name)">{{result.data.display_name}}</li>
+</ul>
