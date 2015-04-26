@@ -8,10 +8,11 @@
  * Controller of the cleverGullApp
  */
 angular.module('cleverGullApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, server) {
+  	
+    server.getData().success(function(data){
+    	$scope.data = data.data;
+    	console.log($scope.data);
+    });
+    
   });

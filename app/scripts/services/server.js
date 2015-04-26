@@ -8,6 +8,7 @@
  * Service in the cleverGullApp.
  */
 angular.module('cleverGullApp')
+<<<<<<< HEAD
   .service('server', function () {
   	return{
   		searchSubreddit: function(search){
@@ -17,4 +18,16 @@ angular.module('cleverGullApp')
 	        });
   		}
   	}
+=======
+  .service('server', function ($http) {
+    // AngularJS will instantiate a singleton by calling "new" on this function
+    return{
+    	getData: function(){
+    		return $http({
+    			url: "https://www.reddit.com/r/webdev.json",
+    			method: "GET"
+    		});
+    	}
+    }
+>>>>>>> ab00bad68706d57a709c1dbf423ec747fd3ecf16
   });
