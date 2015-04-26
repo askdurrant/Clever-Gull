@@ -9,10 +9,10 @@
  */
 angular.module('cleverGullApp')
   .service('server', function ($http) {
-  	return{
-    	getData: function(){
+    return{
+    	getData: function(dataUrl){
     		return $http({
-    			url: "https://www.reddit.com/r/webdev.json",
+    			url: dataUrl,
     			method: "GET"
     		});
     	},
