@@ -9,5 +9,12 @@
  */
 angular.module('cleverGullApp')
   .service('server', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  	return{
+  		searchSubreddit: function(search){
+			return $http({
+	            url: "https://www.reddit.com/subreddits/search?q=" + search + ".json"
+	            method: "GET"
+	        });
+  		}
+  	}
   });
