@@ -10,18 +10,21 @@
 </div>
 <div class="col-sm-8">
   <div data-ng-show="getIndividualPost">
-    <h4>Comments</h4>
-    <ul>
-      <li ng-repeat"individualPost.children">
-        <a href="{{ individualPostUrl }}">{{ individualPostTitle }}</a>
-        <div class="comments">
-          <div data-ng-repeat="comment in individualPostComments.data.children" >
-            <hr>
-            <small><strong>{{ comment.data.author }}</strong> | <em>up: {{ comment.data.ups }} / down: {{ comment.data.downs }}</em></small>
-            <p>{{ comment.data.body }}</p>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <a href="{{ individualPostUrl }}">{{ individualPostTitle }}</a>
+    <div ng-if="individualPostData.is_self">
+      <div ng-bind-html>{{ individualPostData.selftext_html }}</div>
+      <div>{{ individualPostData.selftext }}</div>
+    </div>
+    <div class="comments">
+      <h4>Comments</h4>
+      <div data-ng-repeat="comment in individualPostComments.data.children" >
+        <hr>
+        <small>
+          <strong>{{ comment.data.author }}</strong> | <em>up: {{ comment.data.ups }} / down: {{ comment.data.downs }}</em>
+        </small>
+        <p>{{ comment.data.body }}</p>
+      </div>
+    </div>
+
   </div>
 </div>  
