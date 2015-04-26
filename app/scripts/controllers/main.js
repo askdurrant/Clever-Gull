@@ -16,15 +16,10 @@ angular.module('cleverGullApp')
     });
 
     $scope.getIndividualPost = function(postUrl){
-    	
     	var trimPostUrl = postUrl.substring(0, postUrl.length - 1);
     	
-    	var newPostUrl = "https://reddit.com" + trimPostUrl + ".json";
-    	
-    	console.log(newPostUrl);
-		server.getData(newPostUrl).success(function(data){
-			$scope.individualPost = data.data;
-			console.log($scope.individualPost.data);
+		server.getPost(trimPostUrl).success(function(data){
+            console.log(data);
 		})
     };
     

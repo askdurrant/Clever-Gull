@@ -16,6 +16,12 @@ angular.module('cleverGullApp')
     			method: "GET"
     		});
     	},
+    	getPost: function(url){
+			return $http({
+	            url: "http://www.reddit.com/" + url + ".json",
+	            method: "GET"
+	        });			
+    	},
   		searchSubreddit: function(search){
 			return $http({
 	            url: "http://www.reddit.com/subreddits/search.json?q=" + search ,
