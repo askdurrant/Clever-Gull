@@ -1,4 +1,8 @@
-<input type="text" data-ng-model="searchSubreddit"/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">/r/</span>
+  <input type="text" data-ng-model="searchSubreddit" class="form-control" placeholder="Add a subreddit" aria-describedby="basic-addon1">
+</div>
 
 <div ng-if="searchSR">
 	<ul class="search-bar__results-list">

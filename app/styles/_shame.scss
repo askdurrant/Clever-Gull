@@ -8,7 +8,13 @@
 		list-style: none;
 		cursor: pointer;
 		&:hover{
-			color:#bada55;
+			color:$site-primary;
 		}
 	}
+}
+
+.results__title{
+	list-style: none;
+	padding-left: none;
+	cursor: pointer;
 }
