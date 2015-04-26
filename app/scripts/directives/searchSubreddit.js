@@ -11,7 +11,7 @@ angular.module('cleverGullApp')
     return {
       templateUrl: '../../views/search-subreddit.html',
       restrict: 'A',
-      link: function postLink(scope, element, attrs, $watch) {
+      link: function postLink(scope, element, attrs, $watch, $rootScope) {
 
   	  		scope.$watch('searchSubreddit', function(query){
   	  			var searchQuery = query;
@@ -32,7 +32,8 @@ angular.module('cleverGullApp')
   			});
 
   			scope.addSubreddit = function(subreddit){
-  				sharedProperties.addSubreddit(subreddit);
+  				sharedProperties.addSubreddit(subreddit, scope);
+  				scope.searchSR = "";
   			};	
       	}
     };
