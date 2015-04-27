@@ -5,6 +5,8 @@ version 0.11.1.
 
 ## Build & development
 
+After cloning the repo, run `npm install` within the root of the project to install all dependecies locally
+
 Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing

@@ -1,0 +1,35 @@
+
+<div class="col-sm-4">
+  <div class="row">
+    <ul>
+      <li data-ng-repeat="item in data">
+        <h4 class="results__title" ng-click="getIndividualPost(item.data.permalink)">{{ item.data.title }}</h4>
+        <div class="label label-default">{{ item.data.subreddit }}</div>
+        <!-- <img ng-if="item.data.thumbnail" src="{{ item.data.thumbnail }}" alt=""> -->
+        <div class="label label-success"><i class="glyphicon glyphicon-chevron-up"></i>{{ item.data.ups }}</div>
+        <div class="label label-danger"><i class="glyphicon glyphicon-chevron-down"></i>{{ item.data.downs }}</div>
+        <div ng-if="item.data.over_18" class="label label-warning">nsfw</div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col-sm-8">
+  <div data-ng-show="getIndividualPost">
+    <h2><a href="{{ individualPostUrl }}">{{ individualPostTitle }}</a></h2>
+    <div ng-if="individualPostData.is_self">
+      <div ng-bind-html>{{ individualPostData.selftext_html }}</div>
+      <div>{{ individualPostData.selftext }}</div>
+    </div>
+    <div class="comments">
+      <h5>Comments</h5>
+      <div data-ng-repeat="comment in individualPostComments.data.children" >
+        <hr>
+        <small>
+          <strong>{{ comment.data.author }}</strong> | <em>up: {{ comment.data.ups }} / down: {{ comment.data.downs }}</em>
+        </small>
+        <p>{{ comment.data.body }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>  
