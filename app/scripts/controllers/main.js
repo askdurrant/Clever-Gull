@@ -18,6 +18,7 @@ angular.module('cleverGullApp')
 
     $scope.getPosts = function(){
         $scope.data = sharedProperties.getData();
+
     }
 
     $scope.getPosts();
@@ -38,10 +39,6 @@ angular.module('cleverGullApp')
     // };
     // $scope.getData();
 
-    $rootScope.refreshLinks = function(){
-        $scope.getSubscribed();
-        $scope.getData();
-    }
 
     $scope.getIndividualPost = function(postUrl){
     	var trimPostUrl = postUrl.substring(0, postUrl.length - 1);
@@ -59,5 +56,9 @@ angular.module('cleverGullApp')
 
 		})
     };
+
+    $scope.sortSideBar = function(sortBy){
+    	$scoper.sorter = "item.data.ups";
+    }
     
   });
