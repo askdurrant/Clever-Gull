@@ -13,8 +13,10 @@
 	}
 }
 
-.results__title{
+.results-list{
+	padding-left: 0;
+}
+.results-list__result{
 	list-style: none;
-	padding-left: none;
 	cursor: pointer;
 }
