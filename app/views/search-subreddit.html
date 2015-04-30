@@ -5,7 +5,7 @@
 </div>
 
 <div ng-if="searchSR">
-	<ul class="search-bar__results-list">
-		<li data-ng-repeat="result in searchSR" data-ng-click="addSubreddit(result.data.display_name)">{{result.data.display_name}}</li>
+	<ul class="search-bar results-list col-lg-12">
+		<li data-ng-repeat="result in searchSR" data-ng-click="addSubreddit(result.data.display_name)" class="results-item">{{result.data.display_name}}</li>
 	</ul>
 </div>

@@ -1,18 +1,30 @@
-<div class="col-sm-4">
+
+<div class="col-lg-3 side-bar">
   <div class="row">
-    <ul class="results-list">
-      <li class="results-list__result" data-ng-repeat="item in data">
-        <h4 ng-click="getIndividualPost(item.data.permalink)">{{ item.data.title }}</h4>
-        <div class="label label-default">{{ item.data.subreddit }}</div>
-        <!-- <img ng-if="item.data.thumbnail" src="{{ item.data.thumbnail }}" alt=""> -->
-        <div class="label label-success"><i class="glyphicon glyphicon-chevron-up"></i>{{ item.data.ups }}</div>
-        <div class="label label-danger"><i class="glyphicon glyphicon-chevron-down"></i>{{ item.data.downs }}</div>
-        <div ng-if="item.data.over_18" class="label label-warning">nsfw</div>
+    <ul>
+      <li data-ng-click="sortSideBar('top');">Top Rated</li>
+      <li>Worst Rate</li>
+      <li>Alphabetical</li>
+    </ul>
+  </div>
+  <div class="row">
+    <ul class="results-list side-bar-list">
+      <li data-ng-repeat="item in data | orderBy:sorter" class="results-list__result item-list col-lg-12">
+        <div class="col-lg-3">
+          <img ng-if="item.data.thumbnail.length" src="{{ item.data.thumbnail }}" alt="" style="width:100%;">
+        </div>
+        <div class="col-lg-9">
+          <h4 class="results__title" ng-click="getIndividualPost(item.data.permalink)">{{ item.data.title }}</h4>
+          <div class="label label-default">{{ item.data.subreddit }}</div>
+          <div class="label label-success"><i class="glyphicon glyphicon-chevron-up"></i>{{ item.data.ups }}</div>
+          <div class="label label-danger"><i class="glyphicon glyphicon-chevron-down"></i>{{ item.data.downs }}</div>
+          <div ng-if="item.data.over_18" class="label label-warning">nsfw</div>
+        </div>
       </li>
     </ul>
   </div>
 </div>
-<div class="col-sm-8">
+<div class="col-lg-8 main-container">
   <div data-ng-show="getIndividualPost">
     <h2><a href="{{ individualPostUrl }}">{{ individualPostTitle }}</a></h2>
     <h6>Posted By: {{ individualPostData.author }}</h6>

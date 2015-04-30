@@ -14,7 +14,7 @@ angular.module('cleverGullApp')
   	return{
   		addSubreddit: function(subreddit, scope){
   			subreddits.push(subreddit);
-			scope.$broadcast('addedSubreddit');
+			 scope.$broadcast('addedSubreddit');
   		},
   		subscribedSubreddits: function(){
   			return subreddits;
