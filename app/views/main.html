@@ -1,15 +1,15 @@
 
 <div class="col-lg-3 side-bar">
   <div class="row">
-    <ul>
-      <li data-ng-click="sortSideBar('top');">Top Rated</li>
-      <li>Worst Rate</li>
-      <li>Alphabetical</li>
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active" data-ng-click="sortSideBar('top');"><a href="">Top Rated</a></li>
+      <li role="presentation"><a href="">Worst Rate</a></li>
+      <li role="presentation"><a href="">Alphabetical</a></li>
     </ul>
   </div>
   <div class="row">
     <ul class="results-list side-bar-list">
-      <li data-ng-repeat="item in data | orderBy:sorter" class="results-list__result item-list col-lg-12">
+      <li data-ng-repeat="item in data | orderBy:sorter" class="item-list col-lg-12">
         <div class="col-lg-3">
           <img ng-if="item.data.thumbnail.length" src="{{ item.data.thumbnail }}" alt="" style="width:100%;">
         </div>
