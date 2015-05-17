@@ -7,12 +7,12 @@
  * # header
  */
 angular.module('cleverGullApp')
-  .directive('header', function () {
+  .directive('cleverHeader', function () {
     return {
-      template: '<div></div>',
+      templateUrl: '../../views/header.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        element.text('this is the header directive');
+        
       }
     };
   });
