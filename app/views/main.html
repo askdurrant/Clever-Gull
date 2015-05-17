@@ -35,66 +35,45 @@
   link: {{postInfo.permalink}}
   created UTC: {{postInfo.created_utc}}
   
-  <ul>
-    <li data-ng-repeat="comment in postComments">
-      <div>{{comment.data.body}}</div>
-      <div>{{comment.data.author}}</div>
-      <div>{{comment.data.name}}</div>
-      <div>{{comment.data.created_utc}}</div>
-      <ul>
-          <li data-ng-repeat="reply1 in comment.data.replies.data.children">
-                <div>{{reply1.data.body}}</div>
-                <div>{{reply1.data.author}}</div>
-                <div>{{reply1.data.name}}</div>
-                <div>{{reply1.data.created_utc}}</div> 
-            <ul>
-              <li data-ng-repeat="reply2 in reply1.data.replies.data.children">
-                <div>{{reply2.data.body}}</div>
-                <div>{{reply2.data.author}}</div>
-                <div>{{reply2.data.name}}</div>
-                <div>{{reply2.data.created_utc}}</div> 
-                <ul>
-                  <li data-ng-repeat="reply3 in reply2.data.replies.data.children">
-                      <div>{{reply3.data.body}}</div>
-                      <div>{{reply3.data.author}}</div>
-                      <div>{{reply3.data.name}}</div>
-                      <div>{{reply3.data.created_utc}}</div> 
-                    <ul>
-                      <li data-ng-repeat="reply4 in reply3.data.replies.data.children">
-                        <div>{{reply4.data.body}}</div>
-                        <div>{{reply4.data.author}}</div>
-                        <div>{{reply4.data.name}}</div>
-                        <div>{{reply4.data.created_utc}}</div>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-      </ul>
-    </li>
-  </ul>
-  
-  
-  
-<!--  <div data-ng-show="postComments">
-    {{postComments}}
-    <h2><a href="{{ individualPostUrl }}">{{ individualPostTitle }}</a></h2>
-    <h6>Posted By: {{ individualPostData.author }}</h6>
-    <div ng-if="individualPostData.is_self">
-      <div>{{ individualPostData.selftext }}</div>
-    </div>
-    <div class="comments">
-      <h5>Comments</h5>
-      <div data-ng-repeat="comment in individualPostComments.data.children" >
-        <hr>
-        <small>
-          <strong>{{ comment.data.author }}</strong> | <em>up: {{ comment.data.ups }} / down: {{ comment.data.downs }}</em>
-        </small>
-        <p>{{ comment.data.body }}</p>
-      </div>
-    </div>
-
+  <div class="comments">
+    <ul>
+      <li data-ng-repeat="comment in postComments">
+        <div>{{comment.data.body}}</div>
+        <div>{{comment.data.author}}</div>
+        <div>{{comment.data.name}}</div>
+        <div>{{comment.data.created_utc}}</div>
+        <ul>
+            <li data-ng-repeat="reply1 in comment.data.replies.data.children">
+                  <div>{{reply1.data.body}}</div>
+                  <div>{{reply1.data.author}}</div>
+                  <div>{{reply1.data.name}}</div>
+                  <div>{{reply1.data.created_utc}}</div> 
+              <ul>
+                <li data-ng-repeat="reply2 in reply1.data.replies.data.children">
+                  <div>{{reply2.data.body}}</div>
+                  <div>{{reply2.data.author}}</div>
+                  <div>{{reply2.data.name}}</div>
+                  <div>{{reply2.data.created_utc}}</div> 
+                  <ul>
+                    <li data-ng-repeat="reply3 in reply2.data.replies.data.children">
+                        <div>{{reply3.data.body}}</div>
+                        <div>{{reply3.data.author}}</div>
+                        <div>{{reply3.data.name}}</div>
+                        <div>{{reply3.data.created_utc}}</div> 
+                      <ul>
+                        <li data-ng-repeat="reply4 in reply3.data.replies.data.children">
+                          <div>{{reply4.data.body}}</div>
+                          <div>{{reply4.data.author}}</div>
+                          <div>{{reply4.data.name}}</div>
+                          <div>{{reply4.data.created_utc}}</div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+        </ul>
+      </li>
+    </ul>
   </div>
-</div>  -->
