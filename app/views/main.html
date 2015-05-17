@@ -2,9 +2,10 @@
 <div class="col-lg-3 side-bar">
   <div class="row">
     <ul class="nav nav-pills">
-      <li role="presentation" class="active" data-ng-click="sortSideBar('top');"><a href="">Top Rated</a></li>
-      <li role="presentation"><a href="">Worst Rate</a></li>
-      <li role="presentation"><a href="">Alphabetical</a></li>
+      <li role="presentation" data-ng-class="{'active' : sortIndex === 1 }" data-ng-click="sortSideBar('top', 1);"><a href="">Top Rated</a></li>
+      <li role="presentation" data-ng-class="{'active' : sortIndex === 2 }" data-ng-click="sortSideBar('bottom', 2);"><a href="">Worst Rate</a></li>
+      <li role="presentation" data-ng-class="{'active' : sortIndex === 3 }" data-ng-click="sortSideBar('alphabetical', 3);"><a href="">Alphabetical</a></li>
+      <li role="presentation" data-ng-class="{'active' : sortIndex === 4 }" data-ng-click="sortSideBar('reverse', 4);"><a href="">Reverse Alphabetical</a></li>        
     </ul>
   </div>
   <div class="row">

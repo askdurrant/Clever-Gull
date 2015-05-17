@@ -38,8 +38,21 @@ angular.module('cleverGullApp')
 		})
     };
 
-    $scope.sortSideBar = function(sortBy){
-    	$scope.sorter = "item.data.ups";
-    }
+    $scope.sortSideBar = function(sortBy, index){
+        $scope.sortIndex = index;
+        
+        if(sortBy === "top"){
+    	   $scope.sorter = "-data.ups";
+        }
+        else if(sortBy === "bottom"){
+    	   $scope.sorter = "data.ups";       
+        }
+        else if (sortBy ==="alphabetical"){
+    	   $scope.sorter = "-data.title";                   
+        }
+        else if (sortBy ==="reverse"){
+    	   $scope.sorter = "data.title";                   
+        }
+    };
     
   });
