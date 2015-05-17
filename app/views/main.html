@@ -3,7 +3,7 @@
   <div class="row">
     <ul class="nav nav-pills">
       <li role="presentation" data-ng-class="{'active' : sortIndex === 1 }" data-ng-click="sortSideBar('top', 1);"><a href="">Top Rated</a></li>
-      <li role="presentation" data-ng-class="{'active' : sortIndex === 2 }" data-ng-click="sortSideBar('bottom', 2);"><a href="">Worst Rate</a></li>
+      <li role="presentation" data-ng-class="{'active' : sortIndex === 2 }" data-ng-click="sortSideBar('bottom', 2);"><a href="">Worst Rated</a></li>
       <li role="presentation" data-ng-class="{'active' : sortIndex === 3 }" data-ng-click="sortSideBar('alphabetical', 3);"><a href="">Alphabetical</a></li>
       <li role="presentation" data-ng-class="{'active' : sortIndex === 4 }" data-ng-click="sortSideBar('reverse', 4);"><a href="">Reverse Alphabetical</a></li>        
     </ul>
@@ -25,16 +25,25 @@
     </ul>
   </div>
 </div>
-<div class="col-lg-8 main-container">
+<div class="col-lg-8 main-container" data-ng-if="postInfo !== undefined">
   
-  title: {{postInfo.title}}
-  author: {{postInfo.author}}
+  <img src="{{postInfo.thumbnail}}">  
+  <div class="">{{postInfo.title}}</div>
+  <div class="">Author: {{postInfo.author}}</div>
+    
+  <div class="label label-default ng-binding">{{postInfo.subreddit}}</div>
+  <div class="label label-success ng-binding"><i class="glyphicon glyphicon-chevron-up"></i>{{postInfo.ups}}</div>
+  <div class="label label-danger ng-binding"><i class="glyphicon glyphicon-chevron-down"></i>{{postInfo.downs}}</div>
+    
+  
   media type: {{postInfo.media}}
-  score: {{postInfo.score}}
   comment number: {{postInfo.num_comments}}
-  thumbnail: {{postInfo.thumbnail}}
   link: {{postInfo.permalink}}
   created UTC: {{postInfo.created_utc}}
+  
+  <img src={{postInfo.url}} alt="{{postInfo.title}}">
+  
+  
   
   <div class="comments">
     <ul>

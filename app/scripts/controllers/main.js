@@ -8,7 +8,7 @@
 angular.module('cleverGullApp')
 
   .controller('MainCtrl', function ($scope, server, $sce, sharedProperties, $rootScope, $timeout, $q) {
-
+      
     //Get list of subscribed subreddits - NEED TO CHANGE TO SERVER CALL
     $scope.getSubscribed = function(){
         $scope.subscribed = sharedProperties.subscribedSubreddits();
